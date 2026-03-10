@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: easychair.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Database file #1: easychair.bib
+You've used 28 entries,
+            2118 wiz_defined-function locations,
+            628 strings with 8912 characters,
+and the built_in function-call counts, 6798 in all, are:
+= -- 633
+> -- 347
+< -- 0
++ -- 141
+- -- 112
+* -- 288
+:= -- 1165
+add.period$ -- 87
+call.type$ -- 28
+change.case$ -- 140
+chr.to.int$ -- 0
+cite$ -- 28
+duplicate$ -- 196
+empty$ -- 617
+format.name$ -- 112
+if$ -- 1457
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 0
+newline$ -- 146
+num.names$ -- 56
+pop$ -- 252
+preamble$ -- 1
+purify$ -- 112
+quote$ -- 0
+skip$ -- 197
+stack$ -- 0
+substring$ -- 141
+swap$ -- 28
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 112
+warning$ -- 0
+while$ -- 56
+width$ -- 30
+write$ -- 288
