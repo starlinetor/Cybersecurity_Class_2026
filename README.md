@@ -1,2 +1,2 @@
-# Cyb_and_ND_Malware_Evasion_Mechanisms
-Latex repo for the Malware Evasion Mechanisms presentation on Cyber Security and National Defence
+# Cybersecurity & National Defence : Network Encryption and Traffic Analysis
+Latex repo for the Network Encryption and Traffic Analysis on Cyber Security and National Defence
