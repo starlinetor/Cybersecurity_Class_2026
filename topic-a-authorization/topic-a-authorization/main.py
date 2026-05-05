@@ -1,10 +1,14 @@
 import argparse
 import json
 from pathlib import Path
-
 from src.loader import load_json
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
+    """Defines arguments for the script and loads them as Namespaces
+
+    Returns:
+        argparse.Namespace: parsed arguments (input,output)
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True, help="Input directory")
     parser.add_argument("--output", required=True, help="Output JSON file")
