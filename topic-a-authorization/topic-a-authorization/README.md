@@ -1,11 +1,11 @@
-# Cybersecurity and National Defence -- Technical Project
+# Cybersecurity and National Defense -- Technical Project
 
 ## Topic A -- Authorization Policy Engine
 
 ---
 
 ## Group Members
-Write here the name, surname, and student ID of all group members.
+TODO : Write here the name, surname, and student ID of all group members.
 
 Example:
 - Name Surname -- s123456
@@ -15,7 +15,7 @@ Example:
 ---
 
 ## Project Description
-Provide a short explanation of what the program does.
+TODO : Provide a short explanation of what the program does.
 
 Example:
 This project implements a simple authorization engine.
@@ -24,7 +24,7 @@ The program reads JSON input files, evaluates the requests according to the give
 ---
 
 ## Project Structure
-Describe briefly the files and folders included in the submission.
+TODO : Describe briefly the files and folders included in the submission.
 
 Example:
 - `main.py`: main program
@@ -36,7 +36,7 @@ Example:
 ---
 
 ## Python Version
-Specify the Python version used for the project.
+TODO : Specify the Python version used for the project.
 
 Example:
 Python 3.11
@@ -44,7 +44,7 @@ Python 3.11
 ---
 
 ## Required Libraries
-Explain whether the project uses only the Python standard library or also external libraries.
+TODO : Explain whether the project uses only the Python standard library or also external libraries.
 
 Example 1:
 This project uses only the Python standard library.
