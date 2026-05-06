@@ -19,11 +19,11 @@ def parse_args() -> argparse.Namespace:
 def main():
     args : argparse.Namespace = parse_args()
     input_dir : Path = Path(args.input)
-
-    subjects = load_json(input_dir / "subjects.json")
-    resources = load_json(input_dir / "resources.json")
-    policies = load_json(input_dir / "policies.json")
-    requests = load_json(input_dir / "requests.json")
+    
+    subjects = load_json(input_dir.joinpath("subjects.json"))
+    resources = load_json(input_dir.joinpath("resources.json"))
+    policies = load_json(input_dir.joinpath("policies.json"))
+    requests = load_json(input_dir.joinpath("requests.json"))
 
     subjects_id : dict[str, dict] = parse_subjects(subjects)
     resources_id : dict[str, dict] = parse_resources(resources)
