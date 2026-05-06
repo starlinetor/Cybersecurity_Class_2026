@@ -1,4 +1,5 @@
 from typing import Any, TypedDict
+from urllib.request import Request
 
 class Summary(TypedDict):
     total_requests: int
@@ -80,7 +81,7 @@ def evaluate_request(subjects_id : dict[str, dict], resources_id : dict[str, dic
 
     return evaluated_request
 
-def update_summary(summary : Summary, request_result : dict[str,Any]) -> None:
+def update_summary(summary : Summary, request_result : RequestResult) -> None:
     """Updates the summary of the evaluated requests with the result of a single request evaluation
 
     Args:

@@ -2,7 +2,7 @@ import argparse
 import json
 from pathlib import Path
 from src.loader import load_json
-from src.engine import evaluate_requests
+from src.engine import EvaluatedRequests, evaluate_requests
 from src.verify_json import parse_subjects, parse_resources, parse_policies, parse_requests
 
 def parse_args() -> argparse.Namespace:
@@ -30,7 +30,7 @@ def main():
     policies_list : list[dict] = parse_policies(policies)
     requests_stack : list[dict] = parse_requests(requests)
 
-    result : list[dict] = evaluate_requests(subjects_id , resources_id, policies_list, requests_stack)
+    result : EvaluatedRequests = evaluate_requests(subjects_id , resources_id, policies_list, requests_stack)
 
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
