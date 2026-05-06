@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from src.loader import load_json
 from src.engine import evaluate_requests
-from src.verify_json import *
+from src.verify_json import parse_subjects, parse_resources, parse_policies, parse_requests
 
 def parse_args() -> argparse.Namespace:
     """Defines arguments for the script and loads them as Namespaces
