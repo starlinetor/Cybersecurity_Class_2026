@@ -1,5 +1,4 @@
 from typing import Any, TypedDict
-from urllib.request import Request
 
 class Summary(TypedDict):
     total_requests: int
