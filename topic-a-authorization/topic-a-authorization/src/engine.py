@@ -71,7 +71,7 @@ def evaluate_request(subjects_id : dict[str, dict], resources_id : dict[str, dic
         return evaluated_request
     
     for policy in policies_list: 
-        result, matched_conditions = test_policy(policy, subject_id, subject, resource, resource_id, request)
+        result, matched_conditions = test_policy(policy, subject_id, subject, resource_id, resource, request)
         if result:
             evaluated_request["decision"] = "Permit"
             evaluated_request["matched_policy"] = policy["id"]
