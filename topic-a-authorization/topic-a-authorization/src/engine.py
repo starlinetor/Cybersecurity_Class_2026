@@ -1,4 +1,5 @@
 from typing import Any, TypedDict
+from tests import TEST_LIST
 
 class Summary(TypedDict):
     total_requests: int
@@ -108,42 +109,14 @@ def test_policy(policy : dict, subject_id : str, subject : dict, resource_id : s
     Returns:
         tuple[bool, list[str]]: Result of the evaluation and the list of the matched conditions
     """
-    matched_conditions : list[str] = []
-    result = True
-    result, matched_subject_conditions = test_subject_conditions(policy, subject_id, subject)
-    if not result:
-        return (result, [])
-    matched_conditions.extend(matched_subject_conditions)
-    result, matched_resource_conditions = test_resource_conditions(policy, resource_id, resource)
-    if not result:
-        return (result, [])
-    matched_conditions.extend(matched_resource_conditions)
-    result, matched_action_conditions = test_action_conditions(policy, request)
-    if not result:
-        return (result, [])
-    matched_conditions.extend(matched_action_conditions)
-    result, matched_context_conditions = test_context_conditions(policy, request)
-    if not result:
-        return (result, [])
-    matched_conditions.extend(matched_context_conditions)
-    return (result, matched_conditions)
+    total_matched_conditions : list[str] = []
+    result = False
+    
+    for test in TEST_LIST:
+        result, matched_condition = test(policy, subject_id, subject, resource_id, resource, request)
+        if not result:
+            return(result, [])
+        total_matched_conditions.append(matched_condition)
+    
+    return (result, total_matched_conditions)
 
-def test_subject_conditions(policy : dict, subject_id : str, subject : dict) -> tuple[bool, list[str]]:
-    matched_conditions : list[str] = []
-    result = True
-    return (result, matched_conditions)
-
-def test_resource_conditions(policy : dict, resource_id : str, resource : dict) -> tuple[bool, list[str]]:
-    matched_conditions : list[str] = []
-    result = True
-    return (result, matched_conditions)
-
-def test_action_conditions(policy : dict, request : dict) -> tuple[bool, list[str]]:
-    matched_conditions : list[str] = []
-    result = True
-    return (result, matched_conditions)
-
-def test_context_conditions(policy : dict, request : dict) -> tuple[bool, list[str]]:
-    matched_conditions : list[str] = []
-    result = True
-    return (result, matched_conditions)
