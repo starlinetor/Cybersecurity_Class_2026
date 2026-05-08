@@ -1,5 +1,5 @@
-from typing import Any, TypedDict
-from tests import TEST_LIST
+from typing import TypedDict
+from src.tests import TEST_LIST
 
 class Summary(TypedDict):
     total_requests: int
@@ -96,7 +96,7 @@ def update_summary(summary : Summary, request_result : RequestResult) -> None:
     return
 
 def test_policy(policy : dict, subject_id : str, subject : dict, resource_id : str, resource : dict, request : dict) -> tuple[bool, list[str]]:
-    """Tests if a policy satisfies a request by testing all the conditions of the policy and returns the result of the test and the matched conditions.
+    """Tests if a policy satisfies a request by testing all conditions and returns the result of the test and the matched conditions.
 
     Args:
         policy (dict): Policy to test
@@ -110,13 +110,16 @@ def test_policy(policy : dict, subject_id : str, subject : dict, resource_id : s
         tuple[bool, list[str]]: Result of the evaluation and the list of the matched conditions
     """
     total_matched_conditions : list[str] = []
-    result = False
+    result : bool = False
+    matched_condition : list[str] = []
     
     for test in TEST_LIST:
-        result, matched_condition = test(policy, subject_id, subject, resource_id, resource, request)
+        result, matched_condition = test(policy = policy, subject_id = subject_id, subject = subject, resource_id = resource_id, resource = resource, request = request)
         if not result:
             return(result, [])
-        total_matched_conditions.append(matched_condition)
+        if matched_condition : #empty lists are evaluated as false by python
+            #a test might return true because its not in the policy, we ignore the matched condition as there isn't one
+            total_matched_conditions.extend(matched_condition)
     
     return (result, total_matched_conditions)
 
