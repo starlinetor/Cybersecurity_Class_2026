@@ -9,7 +9,7 @@ def test_subject_role(policy : dict, subject : dict, **ignored_args) -> tuple[bo
     except KeyError:
         return (True, [])
     
-    if policy_role == subject["role"]:
+    if policy_role == subject.get("role", None):
         return (True, [f"subject.role={policy_role}"])
     
     return (False, [])
@@ -21,7 +21,7 @@ def test_subject_clearance_min(policy : dict, subject : dict, **ignored_args) ->
     except KeyError:
         return (True, [])
     
-    if subject["clearance"] >= policy_clearance_min:
+    if subject.get("clearance", -1) >= policy_clearance_min: #we assume clearance is always positive
         return (True, [f"subject.clearance>={policy_clearance_min}"])
     
     return (False, [])
@@ -33,7 +33,7 @@ def test_resource_ownership(policy : dict, subject_id: str, resource: dict, **ig
     except KeyError:
         return (True, [])
     
-    if (subject_id == resource["owner"]) and policy_resource_ownership:
+    if (subject_id == resource.get("owner", None)) and policy_resource_ownership:
         return (True, [f"owner_is_subject={policy_resource_ownership}"])
     
     return (False, [])
@@ -44,7 +44,7 @@ def test_resource_type(policy : dict, resource: dict, **ignored_args) -> tuple[b
     except KeyError:
         return (True, [])
     
-    if resource["type"] == policy_resource_type:
+    if resource.get("type", None) == policy_resource_type:
         return (True, [f"resource.type={policy_resource_type}"])
     
     return (False, [])
@@ -55,19 +55,21 @@ def test_resource_classification(policy : dict, resource: dict, **ignored_args) 
     except KeyError:
         return (True, [])
     
-    if resource["classification"] == policy_resource_classification:
+    if resource.get("classification", None) == policy_resource_classification:
         return (True, [f"resource.classification={policy_resource_classification}"])
     
     return (False, [])
 
 def test_action(policy : dict, request : dict, **ignored_args) -> tuple[bool, list[str]]:
     try : 
-        policy_action: list = policy["action"]
+        policy_actions: list = policy["actions"]
     except KeyError:
         return (True, [])
     
-    if request["action"] in policy_action:
-        return (True, [f"action={request["action"]}"])
+    request_action = request.get("action", None)
+    
+    if request_action in policy_actions:
+        return (True, [f"action={request_action}"])
     
     return (False, [])
 
@@ -78,19 +80,21 @@ def test_context_mfa(policy : dict, request : dict, **ignored_args) -> tuple[boo
     except KeyError:
         return (True, [])
     
-    if request["context"]["mfa"] == policy_context_mfa_required:
+    if request.get("context", {}).get("mfa", None) == policy_context_mfa_required:
         return (True, [f"context.mfa={policy_context_mfa_required}"])
     
     return (False, [])
 
 def test_context_time_interval(policy : dict, request : dict, **ignored_args) -> tuple[bool, list[str]]:
     try : #here its assumed that there must be both a min and max hour as only one is meaningless
-        policy_context_hour_min: bool = policy["context"]["hour_min"]
-        policy_context_hour_max: bool = policy["context"]["hour_max"]
+        policy_context_hour_min: int = policy["context"]["hour_min"]
+        policy_context_hour_max: int = policy["context"]["hour_max"]
     except KeyError:
         return (True, [])
     
-    if request["context"]["hour"] >= policy_context_hour_min and request["context"]["hour"] <= policy_context_hour_max:
+    request_context_hour : int = request.get("context", {}).get("hour", -1)
+    
+    if request_context_hour >= policy_context_hour_min and request_context_hour <= policy_context_hour_max:
         return (True, [f"{policy_context_hour_min}<=hour<={policy_context_hour_max}"])
     
     return (False, [])
