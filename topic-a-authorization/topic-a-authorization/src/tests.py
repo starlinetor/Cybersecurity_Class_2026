@@ -3,6 +3,15 @@ from typing import Callable
 #If a test is not present in the policy we consider it as satisfied but we return an empty list of matched conditions
 
 def test_subject_role(policy : dict, subject : dict, **ignored_args) -> tuple[bool, list[str]]:
+    """Tests if the policy target role is the subject role
+
+    Args:
+        policy (dict): Policy to test
+        subject (dict): Subject data
+
+    Returns:
+        tuple[bool, list[str]]: Result of the evaluation and the list of the matched condition
+    """
     
     try :
         policy_role : str = policy["subject"]["role"]
@@ -15,7 +24,15 @@ def test_subject_role(policy : dict, subject : dict, **ignored_args) -> tuple[bo
     return (False, [])
 
 def test_subject_clearance_min(policy : dict, subject : dict, **ignored_args) -> tuple[bool, list[str]]:
+    """Tests if the subject clearance is greater than or equal to the policy target minimum clearance
     
+    Args:
+        policy (dict): Policy to test
+        subject (dict): Subject data
+        
+    Returns:
+        tuple[bool, list[str]]: Result of the evaluation and the list of the matched condition
+    """
     try :
         policy_clearance_min : int = policy["subject"]["clearance_min"]
     except KeyError:
@@ -27,7 +44,16 @@ def test_subject_clearance_min(policy : dict, subject : dict, **ignored_args) ->
     return (False, [])
 
 def test_resource_ownership(policy : dict, subject_id: str, resource: dict, **ignored_args) -> tuple[bool, list[str]]:
-    
+    """Tests if the subject is the owner of the resource
+
+    Args:
+        policy (dict): Policy to test
+        subject_id (str): Subject ID
+        resource (dict): Resource data
+
+    Returns:
+        tuple[bool, list[str]]: Result of the evaluation and the list of the matched condition
+    """
     try : 
         policy_resource_ownership : bool = policy["resource"]["owner_is_subject"]
     except KeyError:
@@ -39,6 +65,15 @@ def test_resource_ownership(policy : dict, subject_id: str, resource: dict, **ig
     return (False, [])
 
 def test_resource_type(policy : dict, resource: dict, **ignored_args) -> tuple[bool, list[str]]:
+    """Tests if the resource type matches the policy target type
+
+    Args:
+        policy (dict): Policy to test
+        resource (dict): Resource data
+
+    Returns:
+        tuple[bool, list[str]]: Result of the evaluation and the list of the matched condition
+    """
     try : 
         policy_resource_type : str = policy["resource"]["type"]
     except KeyError:
@@ -50,6 +85,15 @@ def test_resource_type(policy : dict, resource: dict, **ignored_args) -> tuple[b
     return (False, [])
 
 def test_resource_classification(policy : dict, resource: dict, **ignored_args) -> tuple[bool, list[str]]:
+    """Tests if the resource classification matches the policy target classification
+
+    Args:
+        policy (dict): Policy to test
+        resource (dict): Resource data
+
+    Returns:
+        tuple[bool, list[str]]: Result of the evaluation and the list of the matched condition
+    """
     try : 
         policy_resource_classification : str = policy["resource"]["classification"]
     except KeyError:
@@ -61,6 +105,15 @@ def test_resource_classification(policy : dict, resource: dict, **ignored_args) 
     return (False, [])
 
 def test_action(policy : dict, request : dict, **ignored_args) -> tuple[bool, list[str]]:
+    """Tests if the request of the action is included in the policy's allowed actions
+
+    Args:
+        policy (dict): Policy to test
+        request (dict): Request data
+
+    Returns:
+        tuple[bool, list[str]]: Result of the evaluation and the list of the matched condition
+    """
     try : 
         policy_actions: list = policy["actions"]
     except KeyError:
@@ -74,7 +127,15 @@ def test_action(policy : dict, request : dict, **ignored_args) -> tuple[bool, li
     return (False, [])
 
 def test_context_mfa(policy : dict, request : dict, **ignored_args) -> tuple[bool, list[str]]:
-    
+    """Tests if the request satisfies the policy mfa requirement, handles both required mfa and forbidden mfa
+
+    Args:
+        policy (dict): Policy to test
+        request (dict): Request data
+
+    Returns:
+        tuple[bool, list[str]]: Result of the evaluation and the list of the matched condition
+    """
     try : 
         policy_context_mfa_required: bool = policy["context"]["mfa_required"]
     except KeyError:
@@ -86,6 +147,15 @@ def test_context_mfa(policy : dict, request : dict, **ignored_args) -> tuple[boo
     return (False, [])
 
 def test_context_time_interval(policy : dict, request : dict, **ignored_args) -> tuple[bool, list[str]]:
+    """Tests if the request has been made in the time interval specified in the policy context
+
+    Args:
+        policy (dict): Policy to test
+        request (dict): Request data
+
+    Returns:
+        tuple[bool, list[str]]: Result of the evaluation and the list of the matched condition
+    """
     try : #here its assumed that there must be both a min and max hour as only one is meaningless
         policy_context_hour_min: int = policy["context"]["hour_min"]
         policy_context_hour_max: int = policy["context"]["hour_max"]

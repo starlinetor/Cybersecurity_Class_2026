@@ -100,9 +100,9 @@ def test_policy(policy : dict, subject_id : str, subject : dict, resource_id : s
 
     Args:
         policy (dict): Policy to test
-        subject_id (str): Id of the subject
+        subject_id (str): Subject ID
         subject (dict): Subject data
-        resource_id (str): Resource id
+        resource_id (str): Resource ID
         resource (dict): Resource data
         request (dict): Request to evaluate
 
