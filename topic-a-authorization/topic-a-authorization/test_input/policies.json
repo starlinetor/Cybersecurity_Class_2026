@@ -58,6 +58,79 @@
         "classification": "internal"
       },
       "actions": ["read"]
+    },
+    {
+      "id": "P6",
+      "resource": {
+        "classification": "public"
+      },
+      "actions": ["read"]
+    },
+    {
+      "id": "P7",
+      "subject": {
+        "role": "admin",
+        "clearance_min": 5
+      },
+      "resource": {
+        "type": "system_config",
+        "classification": "top_secret",
+        "owner_is_subject": true
+      },
+      "actions": ["read", "write", "delete"],
+      "context": {
+        "mfa_required": true,
+        "hour_min": 2,
+        "hour_max": 4
+      }
+    },
+    {
+      "id": "P8",
+      "subject": {
+        "role": "guest"
+      },
+      "actions": []
+    },
+    {
+      "id": "P9",
+      "resource": {
+        "type": "mfa_setup_guide"
+      },
+      "actions": ["read"],
+      "context": {
+        "mfa_required": false
+      }
+    },
+    {
+      "id": "P10",
+      "subject": {
+        "clearance_min": 1
+      },
+      "actions": ["update"],
+      "context": {
+        "hour_min": 12,
+        "hour_max": 12
+      }
+    },
+    {
+      "id": "P11",
+      "subject": {
+        "role": "professor"
+      },
+      "resource": {
+        "type": "exam_record"
+      },
+      "actions": ["delete"]
+    },
+    {
+      "id": "P12",
+      "subject": {
+        "role": "professor"
+      },
+      "resource": {
+        "type": "exam_record"
+      },
+      "actions": ["read", "write"]
     }
   ]
 }

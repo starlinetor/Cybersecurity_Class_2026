@@ -49,6 +49,88 @@
         "hour": 9,
         "mfa": false
       }
+    },
+    {
+      "request_id": "R6",
+      "subject_id": "u700",
+      "resource_id": "x404",
+      "action": "read",
+      "context": {}
+    },
+    {
+      "request_id": "R7",
+      "subject_id": "u500",
+      "resource_id": "c999",
+      "action": "write",
+      "context": {
+        "hour": 3,
+        "mfa": true
+      }
+    },
+    {
+      "request_id": "R8",
+      "subject_id": "u500",
+      "resource_id": "c999",
+      "action": "write",
+      "context": {
+        "hour": 5,
+        "mfa": true
+      }
+    },
+    {
+      "request_id": "R9",
+      "subject_id": "u600",
+      "resource_id": "g501",
+      "action": "read",
+      "context": {}
+    },
+    {
+      "request_id": "R10",
+      "subject_id": "u100",
+      "resource_id": "mfa_001",
+      "action": "read",
+      "context": {
+        "mfa": false
+      }
+    },
+    {
+      "request_id": "R11",
+      "subject_id": "u100",
+      "resource_id": "mfa_001",
+      "action": "read",
+      "context": {
+        "mfa": true
+      }
+    },
+    {
+      "request_id": "R12",
+      "subject_id": "u300",
+      "resource_id": "a100",
+      "action": "update",
+      "context": {
+        "hour": 12
+      }
+    },
+    {
+      "request_id": "R13",
+      "subject_id": "u200",
+      "resource_id": "e700",
+      "action": "update",
+      "context": {}
+    },
+    {
+      "request_id": "R14",
+      "subject_id": "u200",
+      "resource_id": "e700",
+      "action": "read",
+      "context": {}
+    },
+    {
+      "request_id": "R15",
+      "subject_id": "u999",
+      "resource_id": "z999",
+      "action": "read",
+      "context": {}
     }
   ]
 }

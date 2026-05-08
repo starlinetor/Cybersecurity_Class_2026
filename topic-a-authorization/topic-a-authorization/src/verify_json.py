@@ -1,5 +1,7 @@
 from typing import Any
 
+#Keys are validated in the parsing function but its assumed the data is the correct data type, if not the behavior is undefined
+
 def parse_subjects(subjects_raw : Any) -> dict[str, dict]:
     """Checks for correct formatting of the subject json file and returns a dictionary of the subjects
     Args:
@@ -61,13 +63,14 @@ def parse_policies(policies_raw : Any) -> list[dict]:
     parsed_policies : list[dict] = []
     try:
         for policy in policies_raw["policies"]:
-            optional_context = policy.get("context", {}) #context might be optional, get prevents errors when missing
             policy_data = {
+                #policy id is considered mandatory
                 "id" : policy["id"],
-                "subject" : policy["subject"],
-                "resource" : policy["resource"],
-                "actions" : policy["actions"],
-                "context" : optional_context
+                #policy fields are optionals
+                "subject" : policy.get("subject", {}), 
+                "resource" : policy.get("resource", {}),
+                "actions" :  policy.get("actions", []),
+                "context" : policy.get("context", {})
             }
             parsed_policies.append(policy_data)
     except KeyError as e: 

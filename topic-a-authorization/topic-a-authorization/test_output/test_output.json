@@ -1,8 +1,8 @@
 {
   "summary": {
-    "total_requests": 5,
-    "permitted_requests": 3,
-    "denied_requests": 2
+    "total_requests": 15,
+    "permitted_requests": 8,
+    "denied_requests": 7
   },
   "results": [
     {
@@ -49,6 +49,90 @@
         "resource.classification=internal",
         "action=read"
       ]
+    },
+    {
+      "request_id": "R6",
+      "decision": "Permit",
+      "matched_policy": "P6",
+      "matched_conditions": [
+        "resource.classification=public",
+        "action=read"
+      ]
+    },
+    {
+      "request_id": "R7",
+      "decision": "Permit",
+      "matched_policy": "P7",
+      "matched_conditions": [
+        "subject.role=admin",
+        "subject.clearance>=5",
+        "owner_is_subject=True",
+        "resource.type=system_config",
+        "resource.classification=top_secret",
+        "action=write",
+        "context.mfa=True",
+        "2<=hour<=4"
+      ]
+    },
+    {
+      "request_id": "R8",
+      "decision": "Deny",
+      "matched_policy": null,
+      "matched_conditions": []
+    },
+    {
+      "request_id": "R9",
+      "decision": "Deny",
+      "matched_policy": null,
+      "matched_conditions": []
+    },
+    {
+      "request_id": "R10",
+      "decision": "Permit",
+      "matched_policy": "P9",
+      "matched_conditions": [
+        "resource.type=mfa_setup_guide",
+        "action=read",
+        "context.mfa=False"
+      ]
+    },
+    {
+      "request_id": "R11",
+      "decision": "Deny",
+      "matched_policy": null,
+      "matched_conditions": []
+    },
+    {
+      "request_id": "R12",
+      "decision": "Permit",
+      "matched_policy": "P10",
+      "matched_conditions": [
+        "subject.clearance>=1",
+        "action=update",
+        "12<=hour<=12"
+      ]
+    },
+    {
+      "request_id": "R13",
+      "decision": "Deny",
+      "matched_policy": null,
+      "matched_conditions": []
+    },
+    {
+      "request_id": "R14",
+      "decision": "Permit",
+      "matched_policy": "P1",
+      "matched_conditions": [
+        "subject.role=professor",
+        "resource.type=exam_record",
+        "action=read"
+      ]
+    },
+    {
+      "request_id": "R15",
+      "decision": "Deny",
+      "matched_policy": null,
+      "matched_conditions": []
     }
   ]
 }

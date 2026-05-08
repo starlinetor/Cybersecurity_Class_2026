@@ -19,6 +19,21 @@
       "id": "u400",
       "role": "researcher",
       "clearance": 2
+    },
+    {
+      "id": "u500",
+      "role": "admin",
+      "clearance": 5
+    },
+    {
+      "id": "u600",
+      "role": "guest",
+      "clearance": 0
+    },
+    {
+      "id": "u700",
+      "role": "auditor",
+      "clearance": 4
     }
   ]
 }

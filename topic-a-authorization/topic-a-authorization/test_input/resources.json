@@ -23,6 +23,36 @@
       "type": "research_file",
       "owner": "u400",
       "classification": "internal"
+    },
+    {
+      "id": "c999",
+      "type": "system_config",
+      "owner": "u500",
+      "classification": "top_secret"
+    },
+    {
+      "id": "p001",
+      "type": "public_info",
+      "owner": "system",
+      "classification": "unclassified"
+    },
+    {
+      "id": "a100",
+      "type": "audit_log",
+      "owner": "u700",
+      "classification": "internal"
+    },
+    {
+      "id": "x404",
+      "type": "deprecated_file",
+      "owner": "u100",
+      "classification": "public"
+    },
+    {
+      "id": "mfa_001",
+      "type": "mfa_setup_guide",
+      "owner": "system",
+      "classification": "internal"
     }
   ]
 }
