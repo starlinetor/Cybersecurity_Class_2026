@@ -8,9 +8,8 @@
 TODO : Write here the name, surname, and student ID of all group members.
 
 Example:
-- Name Surname -- s123456
-- Name Surname -- s234567
-- Name Surname -- s345678
+- Edoardo Arturo Cancelli -- s335716
+- Francesca Malagodi -- s234567
 
 ---
 
@@ -24,20 +23,24 @@ The program reads JSON input files, evaluates the requests according to the give
 ---
 
 ## Project Structure
-TODO : Describe briefly the files and folders included in the submission.
 
-Example:
-- `main.py`: main program
-- `src/`: Python modules used by the program
-- `input/`: example input files
-- `output/`: example output files
-- `requirements.txt`: list of required Python libraries
+- `topic-a-authorization`
+    - `input/`: example input files
+    - `output/`: example output files
+    - `src/`: Python modules used by the program
+        - `engine.py`: authorization engine module
+        - `loader.py`: json loading module
+        - `tests.py`: policy tests module
+        - `verify_json.py`: json verifier and parser module
+    - `test_input/`: edge case testing input files
+    - `test_output/`: edge case testing output files
+    - `Group_Projects_Technical_part.pdf`: Project instructions      
+    - `main.py`: main program
+    - `README.md`: read me file
 
 ---
 
 ## Python Version
-TODO : Specify the Python version used for the project.
-
 Example:
 Python 3.11
 
