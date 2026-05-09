@@ -73,7 +73,7 @@ options:
 
 ### Windows
 ``` bash
-(.venv) PS C:\\Users\\user_1\\OneDrive\\Documenti\\GitHub\\Cybersecurity_Class_2026\\topic-a-authorization\\topic-a-authorization>  py main.py --input input --output output\output.json
+(.venv) PS C:\Users\user_1\OneDrive\Documenti\GitHub\Cybersecurity_Class_2026\topic-a-authorization\topic-a-authorization>  py main.py --input input --output output\output.json
 ```
 
 ### Linux / macOS 
