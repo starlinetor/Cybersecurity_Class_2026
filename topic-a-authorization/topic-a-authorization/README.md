@@ -14,11 +14,28 @@ Example:
 ---
 
 ## Project Description
-TODO : Provide a short explanation of what the program does.
+This project implements a simple Attribute-Based-Access-Control (ABAC) Policy-based access control authorization engine. 
 
-Example:
-This project implements a simple authorization engine.
-The program reads JSON input files, evaluates the requests according to the given policies, and produces a JSON output containing the final decision for each request.
+### Authorization pipeline
+1) 
+
+---
+
+# Usage
+```bash
+usage: main.py [-h] --input INPUT --usaoutput OUTPUT
+
+options:
+  -h, --help       show this help message and exit
+  --input INPUT    Input directory
+  --output OUTPUT  Output JSON file
+```
+---
+
+# Example 
+``` bash
+(.venv) PS C:\\Users\\user_1\\OneDrive\\Documenti\\GitHub\\Cybersecurity_Class_2026\\topic-a-authorization\\topic-a-authorization>  py main.py --input input --output output\output.json
+```
 
 ---
 
@@ -41,19 +58,16 @@ The program reads JSON input files, evaluates the requests according to the give
 ---
 
 ## Python Version
-Example:
-Python 3.11
+Python 3.12.6 (tested on windows 11)
 
 ---
 
 ## Required Libraries
-TODO : Explain whether the project uses only the Python standard library or also external libraries.
-
-Example 1:
-This project uses only the Python standard library.
-
-Example 2:
-This project requires the libraries listed in `requirements.txt`.
+This project uses only the following standard libraries : 
+- `argparse` : argument parsing
+- `pathlib` : linux - mac - windows compatible pathing
+- `json` : json handling
+- `typing` : type hints
 
 ---
 
