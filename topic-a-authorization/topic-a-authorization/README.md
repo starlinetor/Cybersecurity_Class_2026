@@ -28,11 +28,37 @@ This project implements a simple Attribute-Based-Access-Control (ABAC) Policy-ba
 6. Once all policies are tested or a matching one is found the engine writes the report on the request
 7. Requests are combined for the final report that is dumped in the output.json file
 
+### Datastructures
+
+- The implementation utilizes dictionaries for fast look up of subjects and resources. 
+Both use the id as the key for the dictionary : dict[str, dict]
+- Requests and policies are instead stored as lists as they are used sequentially : list[dict]
+- Tests are stored in the TEST_LIST : list[Callable] to be executed sequentially
+- The evaluation result is stored as a special Typedict class for more precise type hints.
+Unlike the json file the evaluation result datatypes are strictly enforced :
+```py
+class EvaluatedRequests(TypedDict):
+    summary: Summary
+    results: list[RequestResult]
+```
+
+### Handled edge cases
+All tests have been written keeping in mind that the verify_json does not strictly enforce datatypes and missing keys,
+Therefore outside of try-except blocks no Direct Access to dictionaries is done and get is used instead. 
+When get is used and the key is missing the default value has been chosen to make the test fail and therefore the policy too. 
+Ex : 
+```py
+if subject.get("clearance", -1) >= policy_clearance_min: #we assume clearance is always positive
+```
+### Design limitations
+The design is unable to handle policies that instead of permitting they deny, this would require a complete refactoring of the logic as the engine lets a request pass at the first matched policy, also the software assumes all policies are of type permit. 
+Adding new first level fields to subjects, resources, requests or policies is not easily implementable. But adding new second level fields to requests_context or policies can be done as the verify_json.py module does not enforce them. 
+
 ---
 
 # Usage
 ```bash
-usage: main.py [-h] --input INPUT --usaoutput OUTPUT
+usage: main.py [-h] --input INPUT --output OUTPUT
 
 options:
   -h, --help       show this help message and exit
