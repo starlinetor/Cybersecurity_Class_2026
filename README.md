@@ -1,8 +1,6 @@
-# Cybersecurity and National Defense Malware Evasion Mechanisms
-Latex repo for the Malware Evasion Mechanisms presentation on Cyber Security and National Defense
+# Cybersecurity & National Defense : Network Encryption and Traffic Analysis
+Latex repo for the Network Encryption and Traffic Analysis on Cyber Security and National Defense
 
 # topic A authorization
 Dev project on authorization
-
-test
 
