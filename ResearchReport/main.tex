@@ -1,17 +1,7 @@
 \documentclass{article}
 
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[english]{babel}
-
-% Set page size and margins
-% Replace `letterpaper' with `a4paper' for UK/EU standard size
-\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-% Useful packages
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%loads style package : mystyle.sty
+\usepackage{mystyle}
 
 \title{Research Report\\Network Encryption and Traffic Analysis}
 
@@ -22,25 +12,23 @@ Francesca Malagodi -- s336645}
 \maketitle
 
 \begin{abstract}
-Your abstract.
+\input{chapters/abstract}
 \end{abstract}
 
 
-\section{Introduction}
+\input{chapters/introduction}
 
+\input{chapters/background}
 
-\section{Background}
+\input{chapters/overview}
 
-\section{Overview of the problem/evaluation}
+\input{chapters/examples}
 
-\section{Examples}
+\input{chapters/discussion}
 
-\section{Discussion about mitigations/protections/applications}
-
-\section{Conclusion}
-
+\input{chapters/Conclusion}
 
 \bibliographystyle{alpha}
-\bibliography{sample}
+\bibliography{articles}
 
 \end{document}
