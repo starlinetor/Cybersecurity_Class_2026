@@ -2,6 +2,9 @@
 
 %loads style package : mystyle.sty
 \usepackage{mystyle}
+\usepackage{marginnote} % Helps handle narrow margins
+\usepackage{todonotes} % Notes library
+\setlength{\marginparwidth}{2cm} % Dynamically adjusts the width
 
 \title{Research Report\\Network Encryption and Traffic Analysis}
 
@@ -11,10 +14,11 @@ Francesca Malagodi -- s336645}
 \begin{document}
 \maketitle
 
+\listoftodos
+
 \begin{abstract}
 \input{chapters/abstract}
 \end{abstract}
-
 
 \input{chapters/introduction}
 
@@ -26,7 +30,7 @@ Francesca Malagodi -- s336645}
 
 \input{chapters/discussion}
 
-\input{chapters/Conclusion}
+\input{chapters/conclusion}
 
 \bibliographystyle{alpha}
 \bibliography{articles}
