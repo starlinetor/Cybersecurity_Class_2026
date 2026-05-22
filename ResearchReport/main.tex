@@ -1,17 +1,10 @@
 \documentclass{article}
 
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[english]{babel}
-
-% Set page size and margins
-% Replace `letterpaper' with `a4paper' for UK/EU standard size
-\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-% Useful packages
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+%loads style package : mystyle.sty
+\usepackage{mystyle}
+\usepackage{marginnote} % Helps handle narrow margins
+\usepackage{todonotes} % Notes library
+\setlength{\marginparwidth}{2cm} % Dynamically adjusts the width
 
 \title{Research Report\\Network Encryption and Traffic Analysis}
 
@@ -21,18 +14,15 @@ Francesca Malagodi -- s336645}
 \begin{document}
 \maketitle
 
+\listoftodos %DO NOT REMOVE THIS LINE, IT DISPLAYS THE TODOs IN THE DOCUMENT
+
 \begin{abstract}
-Your abstract.
+\input{chapters/abstract}
 \end{abstract}
-%Introduction
-%Background
-%➢ Overview of the problem/evaluation
-%➢ Examples (where applicable)
-%➢ Discussion about mitigations/protections/applications
-%➢ Conclusion
 
-\section{Introduction}
+\input{chapters/introduction}
 
+\input{chapters/background}
 
 \section{Background}
 \subsection{The evolution of encryption}
@@ -54,13 +44,13 @@ that the HTTPS will replace mostly HTTP protocols, also thanks to
 initiatives and actions taken by the major browser vendors to 
 promote the importance of security. \cite{postcards}
 \section{Overview of the problem/evaluation}
+\input{chapters/overview}
 
-\section{Examples}
+\input{chapters/examples}
 
-\section{Discussion about mitigations/protections/applications}
+\input{chapters/discussion}
 
-\section{Conclusion}
-
+\input{chapters/conclusion}
 
 \begin{thebibliography}{1}
     \bibitem{journal33}
@@ -69,5 +59,6 @@ promote the importance of security. \cite{postcards}
     \bibitem{postcards}
     S. Calzavara, R. Focardi, M. Nemec, A. Rabitti and M. Squarcina, "Postcards from the Post-HTTP World: Amplification of HTTPS Vulnerabilities in the Web Ecosystem," 2019 IEEE Symposium on Security and Privacy (SP), San Francisco, CA, USA, 2019, pp. 281-298.
 \end{thebibliography}
+
 
 \end{document}
