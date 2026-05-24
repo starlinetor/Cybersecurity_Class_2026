@@ -21,14 +21,18 @@ promote the importance of security. \cite{postcards}
 \subsection{Protocols}
 As it is briefly explained in the paragraph above there are different protocols 
 that contribute to security on the Web. The two more widely used are TLS (Transport Layer Security) and IPsec (Internet Protocol Security).
-\\TLS aims to ensure end-to-end security protection against active attacks, 
+\subparagraph*{TLS} aims to ensure end-to-end security protection against active attacks, 
 it is a protocol that runs between a client and a server. In the
 beginning it was only used in web browsers for HTTPS connections, now it is used on
 a wider scale: e-commerce transactions, VPNs, and mobile apps for Android and iOS. 
 It consists of the Handeshake Protocol, which focus is on key establishment and authentication, 
 and the Record Protocol, which allows a secur delivery of the data.
 \cite{tls}
+\subparagraph*{IPsec}
 
+
+\subsection{The metadata}
+(What encryption leaves behind—packet sizes, time stamps, directional flow, and IP routing information.)
 
 %\subsection{Network packets} 
 %The data is sent over computers into packets, which are a small part of a bigger message. 
@@ -36,20 +40,3 @@ and the Record Protocol, which allows a secur delivery of the data.
 %The header is like a label, it provides information about the contents and the origin and destination's IP addresses. 
 %The payload is the actual data.
 %The way data is shared is important to detect attacks and suspicious activity.
-
-\subsection{Network traffic analysis}
-The network traffic analysis is an important part for developing control 
-schemes and distinguish a malicious packet from a normal one. 
-Prediction in network traffic is important and there are two categories: 
-long and short period predictions. The long period prediction allows more 
-detailed forecast, it helps to determine future capacity needs and allows 
-better planning and decision taking. Short period predictions can be used 
-for congestion control and a better resource management. \cite{network}
-\\Nowadays network traffic analysis has become very important 
-for monitoring the traffic. Preaviously, only a few newtworks devices were kept 
-monitored since the bandwidth was just about 100 Mbps. Now the speed
-has increased to more than 1 Gbps and more networks have been created, 
-so it is clear how this science has to keep evolving.
-There are various tecniques for network traffic analysis,
-a generic structure consists of a preprocessing and then actual analysis 
-and observations in order to reveal patterns from the network data.
