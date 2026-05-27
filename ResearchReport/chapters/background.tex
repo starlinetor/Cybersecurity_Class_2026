@@ -32,10 +32,20 @@ subject of many research analysis in orderd to establish its level of security. 
 the one hand, the Record Protocol has been demonstrated to be a secure encryption in many studies,
 the Handshake Protocol still has some flaws. The main weakness is the interaction between 
 the Handshake and the Record protocols: the application key is used to encrypt the last two messages
-of the Handshake Protocol.
+of the Handshake Protocol. \cite{tls}
 
-\cite{tls}
-\subparagraph*{IPsec}
+\subparagraph*{IPsec} is a network protocol that permits the encryption and authentication of
+data at the IP layer, regardless of the kind of data or function that is being transmitted. 
+In a 1999 evaluation \cite{ferguson1999cryptographic} quite a few critisims were brought up on the 
+process and the results of IPsec. The disappointment on how it was developed was a shared opnion among
+the people involved in it. But even with the critics it was the best IP security protocol available, 
+in comparison to all the protocols in the market, IPsec seemed to be one with the better performance. 
+Their main critisism was its complexity; it had too many options and too much flexibility, this results 
+in an important weakness when it comes to security. Another critic was raised one encryption and authentication,
+it needs to be applied to all the data that can be used to determine the meaning of a packet, 
+authentication needs to be applied to the ciphertext but also to the decryption key. 
+\\
+\cite{bae2022performance}
 
 
 \subsection{The metadata}
