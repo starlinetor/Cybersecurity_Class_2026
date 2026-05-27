@@ -26,8 +26,14 @@ that contribute to security on the Web. The two more widely used are TLS (Transp
 it is a protocol that runs between a client and a server. In the
 beginning it was only used in web browsers for HTTPS connections, now it is used on
 a wider scale: e-commerce transactions, VPNs, and mobile apps for Android and iOS. 
-It consists of the Handeshake Protocol, which focus is on key establishment and authentication, 
-and the Record Protocol, which allows a secur delivery of the data.
+It consists of the Handshake Protocol, which focus is on key establishment and authentication, 
+and the Record Protocol, which allows a secur delivery of the data. TLS has been the 
+subject of many research analysis in orderd to establish its level of security. If on
+the one hand, the Record Protocol has been demonstrated to be a secure encryption in many studies,
+the Handshake Protocol still has some flaws. The main weakness is the interaction between 
+the Handshake and the Record protocols: the application key is used to encrypt the last two messages
+of the Handshake Protocol.
+
 \cite{tls}
 \subparagraph*{IPsec}
 
