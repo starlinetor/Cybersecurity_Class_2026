@@ -44,12 +44,20 @@ Their main critisism was its complexity; it had too many options and too much fl
 in an important weakness when it comes to security. Another critic was raised one encryption and authentication,
 it needs to be applied to all the data that can be used to determine the meaning of a packet, 
 authentication needs to be applied to the ciphertext but also to the decryption key. 
-\\
+
 
 \subsection{The metadata}
 (What encryption leaves behind: packet sizes, time stamps, directional flow, and IP routing information.)
-In the paragraph above have been analised some ways to encrypt data when exchanged between two or more parties, 
-however some data still needs to be protected.
+In the paragraphs above have been analised some ways to encrypt data when exchanged between two or more parties, 
+however some data still needs to be protected: the metadata. A lot of information can be leaked trough 
+data records and association, which is why limiting access and data masking becomes as important as ecncryption. 
+The access to the data needs to be controlled trough access requests which are checked and then granted or denied 
+depending on the outcome of the controls. Other tecniques used are disassotiations tecniques which permit the anonymity 
+of the user and its depersonalizations to maintain privacy. Sometimes instead of anonymization, which is a non-reversible process, 
+it is used psedonymination, which is a similar tecnique but the original identifying information is not deleted but only 
+separeted from the data, which is not associated to the pseudonym. Another way to shield sensitive data is encryption again, 
+in this case the key is initially possessed only by the owner. 
+\cite{6149189}
 
 
 %\subsection{Network packets} 
