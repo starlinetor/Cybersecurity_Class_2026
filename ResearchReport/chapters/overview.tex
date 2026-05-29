@@ -15,9 +15,24 @@ for monitoring the traffic. Preaviously, only a few newtworks devices were kept
 monitored since the bandwidth was just about 100 Mbps. Now the speed
 has increased to more than 1 Gbps and more networks have been created, 
 so it is clear how this science has to keep evolving.
-There are various tecniques for network traffic analysis,
-a generic structure consists of a preprocessing and then actual analysis 
-and observations in order to reveal patterns from the network data.
+There are various techniques for network traffic analysis, the typical approach 
+consists of a first processing and inspection or the traffic and then an analysis. 
+\subparagraph{Network Traffic Processing} One of the techniques that allow processing a 
+large amount of data is anomaly detection, this technique aims to identify suspicious or unusual
+activity or behavior. There is a model that rapresents the 'normal network activity' and then all 
+network flow is analised based on the model, it monitors traffic load in order to recognise the 
+triggers to a significant traffic volume change. These systems are built in two phases: the training 
+phase (on a constructed model) and the testing phase (on current traffic). Most of these systems 
+detect anomalies using machine or deep learning techniques.
+\\Another technique is the signature-based network inspection which mostly uses DPI (Deep Packet Inspection) techniques. 
+This tecniques is now used in different layer of the OSI (Open Systems Interconnection), 
+unlike earlier which was only used on packet headers. Nowadays protocols are so complex and obfuscated 
+that it is necessary to inspect all layers. Using DPI allows to identify different styles of 
+content and streaming them based on their type; the same suspicious and malicious traffic is identified and then analised.
+However, these DPI based approaches are only able to process unencrypted data because they extract important information from the 
+network packet payload content. These tecniques expect unencrypted data which nowadays is not realistic so other 
+methods have been investigated. \cite{ntaApplications}
+\subparagraph{Network Encryption Analysis}
 
 \subsection{Information Leakage Vectors}
 

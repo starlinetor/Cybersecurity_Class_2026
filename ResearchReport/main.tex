@@ -4,6 +4,7 @@
 \usepackage{mystyle}
 \usepackage{marginnote} % Helps handle narrow margins
 \usepackage{todonotes} % Notes library
+\usepackage{multicol}
 \setlength{\marginparwidth}{2cm} % Dynamically adjusts the width
 
 \title{Research Report\\Network Encryption and Traffic Analysis}
@@ -13,7 +14,7 @@ Francesca Malagodi -- s336645}
 
 \begin{document}
 \maketitle
-
+%\tableofcontents
 \listoftodos %DO NOT REMOVE THIS LINE, IT DISPLAYS THE TODOs IN THE DOCUMENT
 
 \begin{abstract}
@@ -34,8 +35,10 @@ Francesca Malagodi -- s336645}
 
 % Bibliography
 
+\begin{multicols}{2}
 \bibliographystyle{unsrt}
 \bibliography{articles}
+\end{multicols}
 \todo[inline]{I moved the articles and references in the articles.bib file for a cleaner main.tex file, everything else works the same}
 
 \end{document}

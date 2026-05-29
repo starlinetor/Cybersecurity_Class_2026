@@ -1,0 +1,17 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Background}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The evolution of encryption}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Protocols}{2}{subsection.2.2}%
+\contentsline {subparagraph}{TLS}{2}{section*.4}%
+\contentsline {subparagraph}{IPsec}{2}{section*.5}%
+\contentsline {subsection}{\numberline {2.3}The metadata}{2}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Overview of the problem/evaluation}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Network traffic analysis}{3}{subsection.3.1}%
+\contentsline {subparagraph}{Network Traffic Processing}{3}{section*.6}%
+\contentsline {subsection}{\numberline {3.2}Information Leakage Vectors}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The AI/ML Threat Multiplier}{3}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Examples}{3}{section.4}%
+\contentsline {section}{\numberline {5}Discussion about mitigations/protections/applications}{3}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Is encryption alone sufficient?}{3}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Conclusion}{3}{section.6}%

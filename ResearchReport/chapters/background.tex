@@ -22,7 +22,7 @@ promote the importance of security. \cite{postcards}
 \subsection{Protocols}
 As it is briefly explained in the paragraph above there are different protocols 
 that contribute to security on the Web. The two more widely used are TLS (Transport Layer Security) and IPsec (Internet Protocol Security).
-\subparagraph*{TLS} aims to ensure end-to-end security protection against active attacks, 
+\subparagraph{TLS} aims to ensure end-to-end security protection against active attacks, 
 it is a protocol that runs between a client and a server. In the
 beginning it was only used in web browsers for HTTPS connections, now it is used on
 a wider scale: e-commerce transactions, VPNs, and mobile apps for Android and iOS. 
@@ -34,7 +34,7 @@ the Handshake Protocol still has some flaws. The main weakness is the interactio
 the Handshake and the Record protocols: the application key is used to encrypt the last two messages
 of the Handshake Protocol. \cite{tls}
 
-\subparagraph*{IPsec} is a network protocol that permits the encryption and authentication of
+\subparagraph{IPsec} is a network protocol that permits the encryption and authentication of
 data at the IP layer, regardless of the kind of data or function that is being transmitted. 
 In a 1999 evaluation \cite{ferguson1999cryptographic} quite a few critisims were brought up on the 
 process and the results of IPsec. The disappointment on how it was developed was a shared opnion among
@@ -52,9 +52,9 @@ In the paragraphs above have been analised some ways to encrypt data when exchan
 however some data still needs to be protected: the metadata. A lot of information can be leaked trough 
 data records and association, which is why limiting access and data masking becomes as important as ecncryption. 
 The access to the data needs to be controlled trough access requests which are checked and then granted or denied 
-depending on the outcome of the controls. Other tecniques used are disassotiations tecniques which permit the anonymity 
+depending on the outcome of the controls. Other techniques used are disassotiations techniques which permit the anonymity 
 of the user and its depersonalizations to maintain privacy. Sometimes instead of anonymization, which is a non-reversible process, 
-it is used psedonymination, which is a similar tecnique but the original identifying information is not deleted but only 
+it is used psedonymination, which is a similar technique but the original identifying information is not deleted but only 
 separeted from the data, which is not associated to the pseudonym. Another way to shield sensitive data is encryption again, 
 in this case the key is initially possessed only by the owner. \cite{6149189}
 
