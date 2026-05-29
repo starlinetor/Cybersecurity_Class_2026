@@ -32,7 +32,17 @@ content and streaming them based on their type; the same suspicious and maliciou
 However, these DPI based approaches are only able to process unencrypted data because they extract important information from the 
 network packet payload content. These tecniques expect unencrypted data which nowadays is not realistic so other 
 methods have been investigated. \cite{ntaApplications}
-\subparagraph{Network Encryption Analysis}
+\subparagraph{Network Encryption Analysis} This paragraph discusses approaches for collecting useful side-channel information 
+from network flows despite their full encrypted payloads. 
+\\Quite some information can be extracted only from the type of traffic or the application it's coming from; some 
+pioneers tecniques, like BLINC or Bernailleet al., proposed methods that were able to classify network traffic only 
+based on host behavioral patterns or the sizes of the packets in a SSL connection. These methods had an accuracy of 85\%. 
+Some studies and investigations have been made on identifying traffic that mobile application produce, an experiment 
+based their approach on packet sizes. Applications like AppScanner are able to automatically generate applications fingerprints 
+in encrypted traffic using a supervised learning algorithm with an accuracy of 99\% on the profiled apps. FLOWPRINT analysis network traffic introducing an 
+approach that combines destination-based clustering, browser isolation and pattern recognition; it has an accuracy of 89-90\% even for application updates, 
+newly encountered application and unknown ones.
+
 
 \subsection{Information Leakage Vectors}
 
