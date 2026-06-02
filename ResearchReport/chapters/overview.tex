@@ -41,8 +41,13 @@ Some studies and investigations have been made on identifying traffic that mobil
 based their approach on packet sizes. Applications like AppScanner are able to automatically generate applications fingerprints 
 in encrypted traffic using a supervised learning algorithm with an accuracy of 99\% on the profiled apps. FLOWPRINT analysis network traffic introducing an 
 approach that combines destination-based clustering, browser isolation and pattern recognition; it has an accuracy of 89-90\% even for application updates, 
-newly encountered application and unknown ones.
-
+newly encountered application and unknown ones. Other researches proposed the use of a recurrent neural network (RNN) with a convolutional neural network (CNN) for traffic classification, 
+these algorithms used with this approach do not require remodelling when applied to new models.
+\subparagraph{User Identification} In this paragraph we will analise how data can be extracted from a user actions even when communication is encrypted trough the use of machine learning techniques.
+\\Various systems are proposesd to analise encrypted traffic of Android and iOS devices, they mainly use IP packet fields, packet sizes, direction and timing of the exchanges. 
+Trough machine learning they analise numerous applications such as Gmail, facebook, Twitter, Dropbox to identify different actions. These studies show that eavesdropper are able to gain fine-grained 
+information such as the size of messages or even the language used for the exchange. A system named CUMMA is able to identify the data type (e.g. photo, video, audio...) based on the packet lenghts and time delays in WhatsApp and WeChat exchanges with a 96-97\%.
+Another more dangerous study showed that it is possible to identify financial transactions at the trading stage analysing the encrypted traffic trough the data from mobile payment apps, identifying specific actions and the steps within. 
 
 \subsection{Information Leakage Vectors}
 
