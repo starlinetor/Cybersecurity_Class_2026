@@ -59,7 +59,11 @@ Other successful applications are the ones on social networks, movie feedback, l
 There is an interesting study \cite{embeddingModels}, motivated by the widespread application of these models, tries to gain a better understanding of how, during the stages of training, information about sensitive data may be captured and then leaked.
 May they capture informations about the authors? What are the risks of embeddings?
 They studied three different type of attacks on embedded models. 
-\subparagraph{Embedding inversion}
+\subparagraph{Embedding inversion attacks} The goal of these attacks is to recover the input text x* having access to the function $\Phi$ and the embedded vectors $\Phi$(x*).
+In the study they analised two scenarios, one where it is given access to the parameters and the architecture of the $\Phi$ function (white-box) and the other one where attacks are only based on auxiiary data (black-box).
+\\The initial approach when having white box access could be to create every possible combination of words and test which one matches, but there is a computational problem, it is too complex. 
+The solution they proposed is a continuous relaxation of the sequential word input. This approach generates a continuous variable per each word, then based on the highest probability words forms the final text.
+The attacker can create a small auxiiary dataset to train the model and then retrieve the information with better accuracy.
 
 \subparagraph{Sensitive attributes attacks}
 
