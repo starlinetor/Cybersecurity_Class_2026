@@ -64,8 +64,12 @@ In the study they analised two scenarios, one where it is given access to the pa
 \\The initial approach when having white box access could be to create every possible combination of words and test which one matches, but there is a computational problem, it is too complex. 
 The solution they proposed is a continuous relaxation of the sequential word input. This approach generates a continuous variable per each word, then based on the highest probability words forms the final text.
 The attacker can create a small auxiiary dataset to train the model and then retrieve the information with better accuracy.
-
-\subparagraph{Sensitive attributes attacks}
+\\In the other scenario, the adversary only has access to the embedding model $\Phi$, in this case they do not search for the most likely onput but the adversary learns an inversion model that gets in input $\Phi$(x) and directly output words in the sequence x. 
+The inversion model is trained with an auxiliary data set to maximaze the prediction. In order to achieve that it can be used a multi-label classification, with the focus on single words, or a multi-set prediction, which predicts words based on the the set of words already predicted. 
+\subparagraph{Sensitive attributes attacks} When the embedding is user related, the vector also captures information about the user and it usually cointains more information than just the raw input. 
+In many applications this user related information is used to give the user more personalized services, but it can reveal sensitive information that the user probably did not intend to share.
+In supervised learning, sensitive attributes can be revealed but they are used as internal features for the learning task; in unsupervised learning the leakage of sensitive information is less controlled. 
+ When the model is trained on text unsupervised, it groups vectors that are similar together and stores away different vectors. This way, since a person tends to write with the same style, vocabulary and context the user can be identified. 
 
 \subparagraph{Membership inference attacks}
 
