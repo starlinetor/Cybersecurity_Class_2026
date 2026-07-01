@@ -71,9 +71,10 @@ In many applications this user related information is used to give the user more
 In supervised learning, sensitive attributes can be revealed but they are used as internal features for the learning task; in unsupervised learning the leakage of sensitive information is less controlled. 
  When the model is trained on text unsupervised, it groups vectors that are similar together and stores away different vectors. This way, since a person tends to write with the same style, vocabulary and context the user can be identified. 
 
-\subparagraph{Membership inference attacks}
+\subparagraph{Membership inference attacks} In the paragraph before the focus was on input privacy but there is another important aspect of privacy in ML models. That is the 'training data privacy', what amount of information used during traing is leaked by the model.
+In this study \cite{embeddingModels} to measure the leakage they use Membership Inference Attack (MIA), the goel is to find out whether a piece of data (words, a phrase or a sentence) has been used to train the model. This permits to discover if the model was trained on private logs or a proprietary code, which would reveal a privacy leak. 
+In the simultations run by the authors they check similarities in the vectors embeddings of the model and the data from a target user, if the similarity scores are too high than the model was trained on that specific data.
+For example attacks can be made against next word prediction model used to train keyboard apps, but this will be analised more in dept in the following paragraph.
 
 
-
-\subsection{The AI/ML Threat Multiplier}
 
