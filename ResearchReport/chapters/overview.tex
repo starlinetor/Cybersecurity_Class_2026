@@ -11,7 +11,7 @@ detailed forecast, it helps to determine future capacity needs and allows
 better planning and decision taking. Short period predictions can be used 
 for congestion control and a better resource management. \cite{network}
 \\Nowadays network traffic analysis has become very important 
-for monitoring the traffic. Preaviously, only a few newtworks devices were kept 
+for monitoring the traffic. Previously, only a few networks devices were kept 
 monitored since the bandwidth was just about 100 Mbps. Now the speed
 has increased to more than 1 Gbps and more networks have been created, 
 so it is clear how this science has to keep evolving.
@@ -19,23 +19,23 @@ There are various techniques for network traffic analysis, the typical approach
 consists of a first processing and inspection or the traffic and then an analysis. 
 \subparagraph{Network Traffic Processing} One of the techniques that allow processing a 
 large amount of data is anomaly detection, this technique aims to identify suspicious or unusual
-activity or behavior. There is a model that rapresents the 'normal network activity' and then all 
-network flow is analised based on the model, it monitors traffic load in order to recognise the 
+activity or behavior. There is a model that represents the 'normal network activity' and then all 
+network flow is analyzed based on the model, it monitors traffic load in order to recognize the 
 triggers to a significant traffic volume change. These systems are built in two phases: the training 
 phase (on a constructed model) and the testing phase (on current traffic). Most of these systems 
 detect anomalies using machine or deep learning techniques.
 \\Another technique is the signature-based network inspection which mostly uses DPI (Deep Packet Inspection) techniques. 
-This tecniques is now used in different layer of the OSI (Open Systems Interconnection), 
+This techniques is now used in different layer of the OSI (Open Systems Interconnection), 
 unlike earlier which was only used on packet headers. Nowadays protocols are so complex and obfuscated 
 that it is necessary to inspect all layers. Using DPI allows to identify different styles of 
-content and streaming them based on their type; the same suspicious and malicious traffic is identified and then analised.
+content and streaming them based on their type; the same suspicious and malicious traffic is identified and then analyzed.
 However, these DPI based approaches are only able to process unencrypted data because they extract important information from the 
-network packet payload content. These tecniques expect unencrypted data which nowadays is not realistic so other 
+network packet payload content. These techniques expect unencrypted data which nowadays is not realistic so other 
 methods have been investigated. \cite{ntaApplications}
 \subparagraph{Network Encryption Analysis} This paragraph discusses approaches for collecting useful side-channel information 
 from network flows despite their full encrypted payloads. 
-\\Quite some information can be extracted only from the type of traffic or the application it's coming from; some 
-pioneers tecniques, like BLINC or Bernailleet al., proposed methods that were able to classify network traffic only 
+\\Quite some information can be extracted only from the type of traffic or the application it's coming from;
+some pioneers techniques, like BLINC or Bernailleet al., proposed methods that were able to classify network traffic only 
 based on host behavioral patterns or the sizes of the packets in a SSL connection. These methods had an accuracy of 85\%. 
 Some studies and investigations have been made on identifying traffic that mobile application produce, an experiment 
 based their approach on packet sizes. Applications like AppScanner are able to automatically generate applications fingerprints 
@@ -43,38 +43,38 @@ in encrypted traffic using a supervised learning algorithm with an accuracy of 9
 approach that combines destination-based clustering, browser isolation and pattern recognition; it has an accuracy of 89-90\% even for application updates, 
 newly encountered application and unknown ones. Other researches proposed the use of a recurrent neural network (RNN) with a convolutional neural network (CNN) for traffic classification, 
 these algorithms used with this approach do not require remodelling when applied to new models. \cite{ntaApplications}
-\subparagraph{User Identification} In this paragraph we will analise how data can be extracted from a user actions even when communication is encrypted trough the use of machine learning techniques.
-\\Various systems are proposesd to analise encrypted traffic of Android and iOS devices, they mainly use IP packet fields, packet sizes, direction and timing of the exchanges. 
-Trough machine learning they analise numerous applications such as Gmail, facebook, Twitter, Dropbox to identify different actions. These studies show that eavesdropper are able to gain fine-grained 
-information such as the size of messages or even the language used for the exchange. A system named CUMMA is able to identify the data type (e.g. photo, video, audio...) based on the packet lenghts and time delays in WhatsApp and WeChat exchanges with a 96-97\%.
-Another more dangerous study showed that it is possible to identify financial transactions at the trading stage analysing the encrypted traffic trough the data from mobile payment apps, identifying specific actions and the steps within. 
-\\There are also works that are able to decode encrypted VoIP (Voice over Internet Protocol) conversations or video streams: audio is encoded using variable bit rates which means the lenght of the packets can be used to recognise standard words or phrases with a 50\% accuracy. 
+\subparagraph{User Identification} In this paragraph we will analyze how data can be extracted from a user's actions even when communication is encrypted through the use of machine learning techniques.
+\\Various systems are proposed to analyze encrypted traffic of Android and iOS devices, they mainly use IP packet fields, packet sizes, direction and timing of the exchanges. 
+Through machine learning they analyze numerous applications such as Gmail, facebook, Twitter, Dropbox to identify different actions. These studies show that eavesdropper are able to gain fine-grained 
+information such as the size of messages or even the language used for the exchange. A system named CUMMA is able to identify the data type (e.g. photo, video, audio...) based on the packet lengths and time delays in WhatsApp and WeChat exchanges with a 96-97\%.
+Another more dangerous study showed that it is possible to identify financial transactions at the trading stage analyzing the encrypted traffic through the data from mobile payment apps, identifying specific actions and the steps within. 
+\\There are also works that are able to decode encrypted VoIP (Voice over Internet Protocol) conversations or video streams: audio is encoded using variable bit rates which means the length of the packets can be used to recognize standard words or phrases with a 50\% accuracy. 
 On the other hand video is decoded due to specific 'burst patterns' in video streams, an attacker can gain information using flow attributes such as bytes and packet flows per second. \cite{ntaApplications}
 
 \subsection{Information Leakage Vectors}
-Vectors conitaning information are created through embeddings; these are mathematical functions that map raw object to real valued vector with the aim of gaining important meanings about the objects. 
-Embeddings are mostly used in Machine learning algorithms to transfer learning: it has resulted ti be very effective and useful for many natural language processing for example paraphrasing, response suggestion, retriving information, text classification and answering questions. 
+Vectors containing information are created through embeddings; these are mathematical functions that map raw object to real valued vector with the aim of gaining important meanings about the objects. 
+Embeddings are mostly used in Machine learning algorithms to transfer learning: it has resulted ti be very effective and useful for many natural language processing for example paraphrasing, response suggestion, retrieving information, text classification and answering questions. 
 Other successful applications are the ones on social networks, movie feedback, locations... 
 \\These services rely more on high quality and sensitive data than improved training algorithms and architectures. 
 There is an interesting study \cite{embeddingModels}, motivated by the widespread application of these models, tries to gain a better understanding of how, during the stages of training, information about sensitive data may be captured and then leaked.
-May they capture informations about the authors? What are the risks of embeddings?
+May they capture information about the authors? What are the risks of embeddings?
 They studied three different type of attacks on embedded models. 
 \subparagraph{Embedding inversion attacks} The goal of these attacks is to recover the input text x* having access to the function $\Phi$ and the embedded vectors $\Phi$(x*).
-In the study they analised two scenarios, one where it is given access to the parameters and the architecture of the $\Phi$ function (white-box) and the other one where attacks are only based on auxiiary data (black-box).
+In the study they analyzed two scenarios, one where it is given access to the parameters and the architecture of the $\Phi$ function (white-box) and the other one where attacks are only based on auxiliary data (black-box).
 \\The initial approach when having white box access could be to create every possible combination of words and test which one matches, but there is a computational problem, it is too complex. 
 The solution they proposed is a continuous relaxation of the sequential word input. This approach generates a continuous variable per each word, then based on the highest probability words forms the final text.
-The attacker can create a small auxiiary dataset to train the model and then retrieve the information with better accuracy.
-\\In the other scenario, the adversary only has access to the embedding model $\Phi$, in this case they do not search for the most likely onput but the adversary learns an inversion model that gets in input $\Phi$(x) and directly output words in the sequence x. 
-The inversion model is trained with an auxiliary data set to maximaze the prediction. In order to achieve that it can be used a multi-label classification, with the focus on single words, or a multi-set prediction, which predicts words based on the the set of words already predicted. 
-\subparagraph{Sensitive attributes attacks} When the embedding is user related, the vector also captures information about the user and it usually cointains more information than just the raw input. 
+The attacker can create a small auxiliary dataset to train the model and then retrieve the information with better accuracy.
+\\In the other scenario, the adversary only has access to the embedding model $\Phi$, in this case they do not search for the most likely input but the adversary learns an inversion model that gets in input $\Phi$(x) and directly output words in the sequence x. 
+The inversion model is trained with an auxiliary data set to maximize the prediction. In order to achieve that it can be used a multi-label classification, with the focus on single words, or a multi-set prediction, which predicts words based on the the set of words already predicted. 
+\subparagraph{Sensitive attributes attacks} When the embedding is user related, the vector also captures information about the user and it usually contains more information than just the raw input. 
 In many applications this user related information is used to give the user more personalized services, but it can reveal sensitive information that the user probably did not intend to share.
 In supervised learning, sensitive attributes can be revealed but they are used as internal features for the learning task; in unsupervised learning the leakage of sensitive information is less controlled. 
  When the model is trained on text unsupervised, it groups vectors that are similar together and stores away different vectors. This way, since a person tends to write with the same style, vocabulary and context the user can be identified. 
 
-\subparagraph{Membership inference attacks} In the paragraph before the focus was on input privacy but there is another important aspect of privacy in ML models. That is the 'training data privacy', what amount of information used during traing is leaked by the model.
-In this study \cite{embeddingModels} to measure the leakage they use Membership Inference Attack (MIA), the goel is to find out whether a piece of data (words, a phrase or a sentence) has been used to train the model. This permits to discover if the model was trained on private logs or a proprietary code, which would reveal a privacy leak. 
-In the simultations run by the authors they check similarities in the vectors embeddings of the model and the data from a target user, if the similarity scores are too high than the model was trained on that specific data.
-For example attacks can be made against next word prediction model used to train keyboard apps, but this will be analised more in dept in the following paragraph.
+\subparagraph{Membership inference attacks} In the paragraph before the focus was on input privacy but there is another important aspect of privacy in ML models. That is the 'training data privacy', what amount of information used during training is leaked by the model.
+In this study \cite{embeddingModels} to measure the leakage they use Membership Inference Attack (MIA), the goal is to find out whether a piece of data (words, a phrase or a sentence) has been used to train the model. This permits to discover if the model was trained on private logs or a proprietary code, which would reveal a privacy leak. 
+In the simulations run by the authors they check similarities in the vectors embeddings of the model and the data from a target user, if the similarity scores are too high than the model was trained on that specific data.
+For example attacks can be made against next word prediction model used to train keyboard apps, but this will be analyzed more in dept in the following paragraph.
 
 
 
