@@ -2,30 +2,29 @@
 \section{Introduction}
 \subsection{The Web, Privacy and Confidentiality}
 In the 1970s ARPANET was born, a packet based network that changed how computers were seen, from arithmetic devices to communication devices. 
-This change in perspective is historical as it changed how computers were used and how we interacted with them, and most importantly, physical isolation stopped being a form of security.[1] \todo[inline]{Add citation to the ARPANET paper}
+This change in perspective is historical as it changed how computers were used and how we interacted with them, and most importantly, physical isolation stopped being a form of security.\cite{hauben_arpanet}
 Until the 1990s networks were still isolated and adoption was low, but with the birth of protocols such as HTTP global adoption followed.
 Today, computers and telematic communications are everywhere and, most importantly, they are used for sensitive information.
-Both our personal data such as, behavior, personal sphere, personal identity but also out sensitive data such as work communications, bank transactions, finance information travel through the internet.
-Considering the scale and heterogeneity of the world wide web its not feasible to ensure the security of the channels, therefore its imperative to ensure a reasonable level of security through encryption ensuring privacy and confidentiality. 
+Both our personal data such as, behavior, personal sphere, personal identity but also our sensitive data such as work communications, bank transactions, finance information travel through the internet.
+Considering the scale and heterogeneity of the world wide web it's not feasible to ensure the security of the channels, therefore it's imperative to ensure a reasonable level of security through encryption ensuring privacy and confidentiality. 
 
 \subsection{The limitations of encryption}
-Modern public encryption thanks to protocols such as HTTPS or encryption algorithms such as RSA is practically unbreakable to what concerns the public domain, therefore the actual data that has been sent through a channel cannot be seen or decrypted by a malicious actor.
+Modern public encryption thanks to protocols such as HTTPS or encryption algorithms such as RSA is practically unbreakable as far as the public domain is concerned, therefore the actual data that has been sent through a channel cannot be seen or decrypted by a malicious actor.
 This does not mean that encryption is always enough, even if explicit data is protected a lot can still be inferred.
 The techniques used as discussed in the report vary but all exploit the fact that encrypted data still has to travel as packets:
 the size, the timestamp, the frequency and the structure of the packet can all be used to infer information about the original data even without breaking encryption. 
-This limitation of encryption is not only relevant to civilians communications, military communications are very sensitive information that states guard as closely as possible to ensure military superiority [2] \todo[inline]{Add citation for military communications paper}, therefore both defending and attacking military networks is key, managing to infer a rough enemy position might be critical information to assert dominance over the battlefield.  
+This limitation of encryption is not only relevant to civilians communications, military communications are very sensitive information that states guard as closely as possible to ensure military superiority \cite{sahu2024military}, therefore both defending and attacking military networks is key, managing to infer a rough enemy position might be critical information to assert dominance over the battlefield.  
 
 \subsection{The double edge of machine learning}
-\todo[inline]{machine learning can be used to infer data and analyze networks}
-\todo[inline]{machine learning with LLM ? can leak data from the training}
+A powerful tool used to analyze network traffic is machine learning;
+it can be used to learn patterns invisible to the human eye allowing for precise inference of the original data up to 98\% \cite{grimaudo2013select}. 
+This process of learning is achieved through the utilization of vectors and embeddings, allowing the model to categorize information. 
+With well structured datasets the model can retain precision even when the environment changes. 
+But the ability of machine learning models to vectorize information is a double-edged sword;
+as they become a potential source of information leakage. 
+A sensitive attribute attack or a membership inference attack can reveal sensitive information used during the training of the model. 
 
 \subsection{Report objective}
 As we said Network traffic protection is very high priority in the modern interconnected world, encryption has been used for a long time as the main tool to protect our sensitive information but, as we discussed and will analyze more in depth later, its often not enough to ensure complete protection.
 The objective of this report is therefore to give a rough overview of the tools and protocols used to ensure network encryption and how metadata can be exploited by malicious attackers to gather information.
 Lastly we will explore how this topic concerns military networks and if encryption is enough to protect them. 
-
-\subsection{TEMPORARY LINKS FOR CITATIONS}
-\todo[inline]{Add these two papers to the citations, maybe add an addtional citation ?}
-1 : https://jbcoco2018.index9.com/Arpa-Arpanet-Internet.pdf\\
-2 : https://link.springer.com/article/10.1007/s40031-024-01136-6
-
