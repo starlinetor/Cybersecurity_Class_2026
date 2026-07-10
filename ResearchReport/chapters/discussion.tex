@@ -3,5 +3,18 @@
 
 \subsection{Network Attack and Defense Stochastic Differential Game Model}
 In this study \cite{https://doi.org/10.1155/2020/3417039} the authors construct a stochastic evolutionary game model based on the stochatsic differential equation. 
-In this attack and defence model the groups choose different strategies based on the incomplete rationality of attackers and defenders
+In this attack and defence model the groups choose different strategies based on the incomplete rationality of attackers and defenders. Both attackers and defenders constantly adjust and improve their methods. 
 
+
+
+\subsection{AI powered Dynamic Encryption and Decryption defence model}
+Traditional cybersecurity systems usually use static encruption, this means they rely on fixed algorithms and predetermined keys without any regard to what happens on the network. 
+In this article \cite{AIpoweredDynamicEncr} the authors believe that this approach is ineffective nowadays adaptive, AI-driven cyber threats.
+\subparagraph{The dynamic Methodology} They propose a more dynamic defence model: it is a automated cybersecurity pipeline that connects threat detection directly to a proportional cryptographic response. Encryption dynamically changes based on the severity of the treaths that the system is facing.
+The framework consists of different stages, it begins with the detection stage which starts with Suricata, an open source intrusion detection system, monitoring traffic and producing detailed alert logs (eve.json). These logs are then analised by a Random Forest classifier that assign to each one of them one of the four security levels (Low, Medium, High, Critical).
+\\Next it is used the dynamic encryption: based on the severity of the treath, a weighted random function dynamically selects and encryption scheme, for higher treath the function chooses stronger or faster algorithms to protects the files but stills manages the computer processing efficiency.
+\\To enable continuous operation, the system uses Windows Task Scheduler that automates this workflow to run every three hours and it uses failure-recovery logic to prevent system crashes or overlapping tasks.
+Decryption is manually triggered by authorized users and it is only limited to a five-minute read only window, after which the file is automatically re-encrypted. All operations, such results, encryption type, decryption attemps and access duration are logged to support forensics investigations.
+\subparagraph{Findings and Results} The framework was tested and evaluated in a controlled environment; they found that the Random Forest algorithm had a 79\% level of accuracy in determining the security level. While it easily identified low risk traffic, it struggled to differante between classes of adjacent levels, mostly due to class imbalance. 
+The system maintained a 93.3\% success rate over 30 runs, with an average encryption latency of 5-9 ms per log.
+\\The study concludes that integrating a ML-based threat classification with adaptive encryption assignment demonstrated strong modularity, automation and forensics traceability. It provides an excellent framework for enterprise and cloud environments and removes human delay while maintaining audit trails.
