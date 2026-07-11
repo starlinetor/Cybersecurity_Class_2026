@@ -1,17 +1,25 @@
 %!TEX root = ../main.tex
 \section{Discussion about mitigations/protections/applications}
+The main methodologies that have been introduced in this research are based on static encryption, but with traffic analysis and real time reaction to an attack the level of defence can change drastically. 
+In the next paragraphs we will analyse a few new approaches that provide a more adaptive defence system that results to be more effective in nowadays networks.
 
 \subsection{Network Attack and Defense Stochastic Differential Game Model}
 In this study \cite{https://doi.org/10.1155/2020/3417039} the authors construct a stochastic evolutionary game model based on the stochatsic differential equation. 
 In this attack and defence model the groups choose different strategies based on the incomplete rationality of attackers and defenders. Both attackers and defenders constantly adjust and improve their methods. 
-
-
+Both attacker and defenders had a set of strategies, meaning potential moves, and payoffs that rapresented gains and losses in different scenarios. Payoffs are calculated based on distinct parameters: costs before and after the attack, probability of success before and after, defenders original assets and increased defensive investement, social rewards and the actual loss suffered.
+\\The core of this study is modifying traditional replication of dynamic equations by adding a white noise (Wiener) process that represent environmental uncertainty. The study proves that this set of equations outputs a unique solution and obtains the evolutionary equilibrium of attack and defense.
+\subparagraph{Simulation results and analysis} They simulated the model using the explicit Euler numerical method on a practical network topology that cosisted of an attacking host, a firewall, a router and three intranet severs (MySQL, Web and FTP). 
+\\They analysed how initial probabilities of attackers (x) and defenders (y) evolved over time, in different conditions. 
+When defenders are actively willing to invest (y=0.7) and the attackers are more passive and moderately aggressive (x=0.4); the system stabilizes quickly dropping the attacker probability to 0 while the defence probability rises to 1, this shows the creation of a secure environment.
+\\Another possible scenario is when both attacker and defenders start with high-moderate probabilities (x=0.5, y=0.6), in this case both statuses converge to 1, this rapresent a network where both attack and defence are active and the network environment is in a relatively fierce state.
+\\A problematic situation arises when defenders start from a low probability (y=0.2) and the attackers with a high probability (x=0.7), in this case the experimental results show that the attackers probability tends to 1 and the defenders gradually approaches 0.
+\\The study concludes that the return on security investment of their model is better that other related kinds of literature, their model is more realistic than traditional static models.
 
 \subsection{AI powered Dynamic Encryption and Decryption defence model}
 Traditional cybersecurity systems usually use static encruption, this means they rely on fixed algorithms and predetermined keys without any regard to what happens on the network. 
 In this article \cite{AIpoweredDynamicEncr} the authors believe that this approach is ineffective nowadays adaptive, AI-driven cyber threats.
 \subparagraph{The dynamic Methodology} They propose a more dynamic defence model: it is a automated cybersecurity pipeline that connects threat detection directly to a proportional cryptographic response. Encryption dynamically changes based on the severity of the treaths that the system is facing.
-The framework consists of different stages, it begins with the detection stage which starts with Suricata, an open source intrusion detection system, monitoring traffic and producing detailed alert logs (eve.json). These logs are then analised by a Random Forest classifier that assign to each one of them one of the four security levels (Low, Medium, High, Critical).
+The framework consists of different stages, it begins with the detection stage which starts with Suricata, an open source intrusion detection system, monitoring traffic and producing detailed alert logs (eve.json). These logs are then analised by a Random Forest classifier that assign to each 1 of them 1 of the four security levels (Low, Medium, High, Critical).
 \\Next it is used the dynamic encryption: based on the severity of the treath, a weighted random function dynamically selects and encryption scheme, for higher treath the function chooses stronger or faster algorithms to protects the files but stills manages the computer processing efficiency.
 \\To enable continuous operation, the system uses Windows Task Scheduler that automates this workflow to run every three hours and it uses failure-recovery logic to prevent system crashes or overlapping tasks.
 Decryption is manually triggered by authorized users and it is only limited to a five-minute read only window, after which the file is automatically re-encrypted. All operations, such results, encryption type, decryption attemps and access duration are logged to support forensics investigations.
