@@ -1,18 +1,31 @@
 %!TEX root = ../main.tex
 \section{Examples}
+In this section we will analyse a couple of examples of applications or attacks based on some methods explained in the previous paragraphs. 
+\subsection{Information Leakage in Android's File-Based Encryption}
+This research \cite{10.1145/3339252.3340340} investigates the amount of information leakage through unencrypted metadata in Android's file-based encryption (FBE), which entered as an alternative to the full-disk encryption (FDE) in Android 7.0. FBE allows direct boot, meaning the user can access encrypted data on the lock screen without providing the credentials straight away. 
+This paper shows that despite data encryption, this new method leaves a significant amount of metadata unencrypted. They also show that information leakeges through metadata can be used to reconstruct a user's behavior, which is what we've discussed in previous paragraphs (\ref{subsection:InfoLeakageVectors}).
+\subparagraph{Methodology} They developed a method based on the IT forensics toolchain \textit{sleuthkit}, which allows them to extract metadata from ext4 partitions; and then from the metadata they collected they propose a method to draft a list of all the installed apps on the device. 
+\\To reconstruct the metadata they analysed the static files, which do not change after installation (such as the base.apk file size and native libraries), and used these as the apps fingerprints, they were able to ident 3903 unique applications.
+\\To track the user behavior they developed a linking tool which identifies dynamic data, fundamental to reconstruct user actions, and associates it to the application static folder. They were able to achieve this by using the behaviour of generation IDs, which are assigned and incremented when folders are created during an app's installation. 
+\\To then reconstruct users behavior they perform cycles to check for changes in the metadata: after every cycle their tool returns a list of new, changed, modified and deleted files. Then compare the data which timeframes data and determine exactly when certain actions occured. 
+\subparagraph{WhatsApp User Action Reconstruction} The researches conducted a case study to demonstrate that they could reconstruct users actions in WhatsApp using only unencrypted metadata. 
+Even though they could not identify characteristic fingerprints for specific messaging actions, they discovered that for every action WhatsApp's databases get updated timestamps. They could identify database files based on the predictable order in which WhatsApp creates them after installation and first use. 
+They clustered their unknown database files by creation time and generation IDs and then knowing the creation patterns, they could identify each database file. This way they were able to trace the exact time a user sent or recived a text message or a photo.
+\\\\The paper concludes that FBE is more insecure than FDE, sacrificing a degree of privacy for user convenience; but they also specified that this vulnerability is limited to devices that run on Android 7.0 and 8.0, because with Android 9.0 google introduced metadata encryption which mitigated the flaws exposed in their research.
 
-\cite[Analyzing Android's File-Based Encryption: Information Leakage through Unencrypted Metadata]{10.1145/3339252.3340340}
+\subsection{bla bla bla}
+bla bla bla
 \\ \cite[Two Models are Better Than One: Federated Learning is Not Private for Google GBoard Next Word Prediction]{10.1007/978-3-031-51482-1_6}
 
 
 
 \subsection{Secure Military Communication}
-This study aims to develop a prototype system for the secure exchange of messages between users of workstations connected with the same TCP/IP networks. This system is desined to meet high-security operational requirements of a military unit, assuring confidentiality and read only by authorized personnel.
+This study \cite{bardis2008design} aims to develop a prototype system for the secure exchange of messages between users of workstations connected with the same TCP/IP networks. This system is desined to meet high-security operational requirements of a military unit, assuring confidentiality and read only by authorized personnel.
 This system is based on maintaining high-level security while remaining practical for real world deployments. 
-\\The data confidentiality is based on the Advanced Encryption Standard (AES) and they use symmetric encryption, because of its high speed and efficiency. 
+\\\\The data confidentiality is based on the Advanced Encryption Standard (AES) and they use symmetric encryption, because of its high speed and efficiency. 
 The most important part of symmetric encryption is the key management, it is the hardest and most error-prone part of secure communication. In this study the authors focus on building a secure lifecycle management system for secret keys, this system automates the process and hides its complexity to the end users.
 \\The management of secret key consist of various steps and security layers: it begins with user registration and initialization, this consists of allowing an entity to become an authorized member of a security domain using a initial key and then initialising the cryptographic application.
 \\The next step consist of generating the key, during this process the algorithm must ensure randomness when creating keys, for them to be unpredictable. Then it needs to be installed and it is done manually or with token passphrases, and along with that it needs to be registred and so associated to a unique name/entity.
 \\The final part of the process is the use and update of the key; the system automates updating and refeshing operational keys before the original keys reach their expiration period, reducing their vulnerability window.
-\\This application basically operates as a specialized peer-to-peer secure chat infrastructure, rather than relying on centralized third-party structures, it allows decentralized encrypted pairing. 
+\\\\This application basically operates as a specialized peer-to-peer secure chat infrastructure, rather than relying on centralized third-party structures, it allows decentralized encrypted pairing. 
 This application is meant not only as a standalone tool but as the fundation for the development of an integrated, large-scale communication framework which is able to bridge multiple sites across an entire military or high security commercial organizations.
