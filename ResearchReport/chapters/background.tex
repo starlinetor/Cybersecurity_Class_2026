@@ -1,0 +1,61 @@
+%!TEX root = ../main.tex
+\section{Background}
+\subsection{The evolution of encryption}
+Encryption is the process of turning the original plain 
+message into cipher text, an unrecognizable message 
+different from the starting one.
+The reverse of encryption is decryption, and the entire 
+process is called cryptography. In general cryptography
+focuses on privacy and the security of information based 
+on data integrity, confidentiality and authentication. \cite{journal33}
+\\To secure the exchange of information over the Web, the HTTPS
+protocol has been created to provide a cryptographic protection. 
+HTTPS is based on other protection protocols that have been improved;
+it basically runs the HTTP protocol, which is at the center of the Web but does 
+not provide confidentiality or integrity, on top of cryptography protocols, such as SSL and TLS,
+that allow bidirectional encryption in communication. 
+\\ Because of the very different levels of security, it is believed 
+that the HTTPS will replace mostly HTTP protocols, also thanks to
+initiatives and actions taken by the major browser vendors to 
+promote the importance of security. \cite{postcards}
+
+\subsection{Protocols}
+As it is briefly explained in the paragraph above there are different protocols 
+that contribute to security on the Web. The two more widely used are TLS (Transport Layer Security) and IPsec (Internet Protocol Security).
+\subparagraph{TLS} aims to ensure end-to-end security protection against active attacks, 
+it is a protocol that runs between a client and a server. In the
+beginning it was only used in web browsers for HTTPS connections, now it is used on
+a wider scale: e-commerce transactions, VPNs, and mobile apps for Android and iOS. 
+It consists of the Handshake Protocol, which focus is on key establishment and authentication, 
+and the Record Protocol, which allows a secure delivery of the data. TLS has been the 
+subject of many research analysis in order to establish its level of security. If on
+the one hand, the Record Protocol has been demonstrated to be a secure encryption in many studies,
+the Handshake Protocol still has some flaws. The main weakness is the interaction between 
+the Handshake and the Record protocols: the application key is used to encrypt the last two messages
+of the Handshake Protocol. \cite{tls}
+
+\subparagraph{IPsec} is a network protocol that permits the encryption and authentication of
+data at the IP layer, regardless of the kind of data or function that is being transmitted. 
+In a 1999 evaluation \cite{ferguson1999cryptographic} quite a few criticisms were brought up on the 
+process and the results of IPsec. The disappointment on how it was developed was a shared opinion among
+the people involved in it. But even with the critics it was the best IP security protocol available, 
+in comparison to all the protocols in the market, IPsec seemed to be one with the better performance. 
+Their main criticism was its complexity; it had too many options and too much flexibility, this results 
+in an important weakness when it comes to security. Another criticism was raised on encryption and authentication,
+it needs to be applied to all the data that can be used to determine the meaning of a packet, 
+authentication needs to be applied to the ciphertext but also to the decryption key. 
+
+
+\subsection{The metadata}
+(What encryption leaves behind: packet sizes, time stamps, directional flow, and IP routing information.)
+In the paragraphs above we have analyzed ways of encrypting data when exchanged between two or more parties, 
+however some data still needs to be protected: the metadata. A lot of information can be leaked through 
+data records and association, which is why limiting access and data masking becomes as important as encryption. 
+The access to the data needs to be controlled through access requests which are checked and then granted or denied 
+depending on the outcome of the controls. Other techniques used are disassociation techniques which permit the anonymity 
+of the user and its depersonalization to maintain privacy. Sometimes instead of anonymization, which is a non-reversible process, 
+it is used pseudonymization, which is a similar technique but the original identifying information is not deleted but only 
+separated from the data, which is not associated to the pseudonym. Another way to shield sensitive data is encryption again, 
+in this case the key is initially possessed only by the owner. \cite{6149189}
+its important to
+
