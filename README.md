@@ -1,5 +1,5 @@
 # Cybersecurity & National Defense
-Python and Tex repo for Cyber Security and National Defense final projects (2026)
+Python and Tex repo for the final project of the Cyber Security and National Defense class of 2026 at Politecnico di Torino
 
 # Group members and project owners
 - Edoardo Arturo Cancelli -- s335716
@@ -7,14 +7,21 @@ Python and Tex repo for Cyber Security and National Defense final projects (2026
 
 # Project Structure
 - `ResearchReport` Research report on Network Encryption and Traffic Analysis made with tex
-    - `chapters` folders containing the tex files for each chapter
-    - `articles.bib` articles reference and bibliography
-    - `mystyle.sty` style file
-    - `TeX.gitignore`
-    - `TeX.gitignore`
-    - `TeX.gitignore`
+    - `chapters` Folder containing the tex files for each chapter
+        - `abstract.tex` Chapter file
+        - `background.tex` Chapter file
+        - `conclusion.tex` Chapter file
+        - `discussion.tex` Chapter file
+        - `examples.tex` Chapter file
+        - `introduction.tex` Chapter file
+        - `overview.tex` Chapter file
+    - `articles.bib` Articles reference and bibliography
+    - `mystyle.sty` Style file
+    - `NetworkEncryption&TrafficAnalysis_Report.tex` Main tex file
+    - `Notes&Resources.md` Useful links and resources
+    - `TeX.gitignore` Tex specific gitignore file
 - `topic-a-authorization` Dev project on authorization engine
-    - `README.md`Readme file for the authorization engine project
+    - `README.md` For more info on the authorization engine project check this file
 - `.gitignore` Generic gitignore file
 - `README.md` This file
 - `Reports_List.pdf`List of all research reports available for the Cybersecurity class of 2026
